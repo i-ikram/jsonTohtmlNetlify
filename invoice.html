@@ -4,27 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .company-details { text-align: right; }
+        .details-container { display: flex; justify-content: space-between; margin-bottom: 20px; }
+        .invoice-details, .billing-details { width: 48%; }
+        .section-title { font-weight: bold; margin-bottom: 10px; }
+        .table-section { width: 100%; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .total { text-align: right; font-weight: bold; }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const data = {
+                billing: {
+                    billedTo: "Nagasaki",
+                    trn: "-",
+                    address: "-",
+                    bookingParty: "Nagasaki",
+                    quotedParty: "Nagasaki",
+                    polAgent: "Modern Shipping Agencies",
+                    podAgent: "Federal Shipping Agents Private Limited"
+                },
+                invoice: {
+                    clientId: "CIN 10009",
+                    invoiceNo: "INV-10000027",
+                    invoiceDate: "-",
+                    sailingDate: "May 31, 2024",
+                    vessel: "Mv Ghazi",
+                    voyage: "GH2001",
+                    portOfLoading: "PKKHI",
+                    portOfDischarge: "OMSOH"
+                },
+                companyDetails: {
+                    address: "PO Box XXXX, Dubai, United Arab Emirates",
+                    phone: "+971 xx xxxxxx",
+                    email: "email@email.com",
+                    trn: "XXXXXXXXXXXXX"
+                }
+            };
+
+            // Populate placeholders
+            document.getElementById("billedTo").innerText = data.billing.billedTo;
+            document.getElementById("trn").innerText = data.billing.trn;
+            document.getElementById("address").innerText = data.billing.address;
+            document.getElementById("bookingParty").innerText = data.billing.bookingParty;
+            document.getElementById("quotedParty").innerText = data.billing.quotedParty;
+            document.getElementById("polAgent").innerText = data.billing.polAgent;
+            document.getElementById("podAgent").innerText = data.billing.podAgent;
+
+            document.getElementById("clientId").innerText = data.invoice.clientId;
+            document.getElementById("invoiceNo").innerText = data.invoice.invoiceNo;
+            document.getElementById("invoiceDate").innerText = data.invoice.invoiceDate;
+            document.getElementById("sailingDate").innerText = data.invoice.sailingDate;
+            document.getElementById("vessel").innerText = data.invoice.vessel;
+            document.getElementById("voyage").innerText = data.invoice.voyage;
+            document.getElementById("portOfLoading").innerText = data.invoice.portOfLoading;
+            document.getElementById("portOfDischarge").innerText = data.invoice.portOfDischarge;
+        });
+    </script>
 </head>
 <body>
-<div>
-    <h3>Billed To: <strong>{{billing.billedTo}}</strong></h3>
-    <p>TRN: {{billing.trn}}</p>
-    <p>Address: {{billing.address}}</p>
-    <p>Booking Party: {{billing.bookingParty}}</p>
-    <p>Quoted Party: {{billing.quotedParty}}</p>
-    <p>POL Agent: {{billing.polAgent}}</p>
-    <p>POD Agent: {{billing.podAgent}}</p>
+<div class="billing-details">
+    <h3>Billed To: <strong id="billedTo"></strong></h3>
+    <p>TRN: <span id="trn"></span></p>
+    <p>Address: <span id="address"></span></p>
+    <p>Booking Party: <span id="bookingParty"></span></p>
+    <p>Quoted Party: <span id="quotedParty"></span></p>
+    <p>POL Agent: <span id="polAgent"></span></p>
+    <p>POD Agent: <span id="podAgent"></span></p>
 </div>
-<div>
+<div class="invoice-details">
     <h3>Tax Invoice</h3>
-    <p>Client ID: {{invoice.clientId}}</p>
-    <p>Invoice No: {{invoice.invoiceNo}}</p>
-    <p>Invoice Date: {{invoice.invoiceDate}}</p>
-    <p>Sailing Date: {{invoice.sailingDate}}</p>
-    <p>Vessel: {{invoice.vessel}}</p>
-    <p>Voyage: {{invoice.voyage}}</p>
-    <p>Port of Loading: {{invoice.portOfLoading}}</p>
-    <p>Port of Discharge: {{invoice.portOfDischarge}}</p>
+    <p>Client ID: <span id="clientId"></span></p>
+    <p>Invoice No: <span id="invoiceNo"></span></p>
+    <p>Invoice Date: <span id="invoiceDate"></span></p>
+    <p>Sailing Date: <span id="sailingDate"></span></p>
+    <p>Vessel: <span id="vessel"></span></p>
+    <p>Voyage: <span id="voyage"></span></p>
+    <p>Port of Loading: <span id="portOfLoading"></span></p>
+    <p>Port of Discharge: <span id="portOfDischarge"></span></p>
 </div>
 <p>This is an auto-generated invoice. No signature or stamp required.</p>
 </body>
