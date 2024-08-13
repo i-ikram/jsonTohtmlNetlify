@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+</head>
+<body>
+<div>
+    <h3>Billed To: <strong>{{billing.billedTo}}</strong></h3>
+    <p>TRN: {{billing.trn}}</p>
+    <p>Address: {{billing.address}}</p>
+    <p>Booking Party: {{billing.bookingParty}}</p>
+    <p>Quoted Party: {{billing.quotedParty}}</p>
+    <p>POL Agent: {{billing.polAgent}}</p>
+    <p>POD Agent: {{billing.podAgent}}</p>
+</div>
+<div>
+    <h3>Tax Invoice</h3>
+    <p>Client ID: {{invoice.clientId}}</p>
+    <p>Invoice No: {{invoice.invoiceNo}}</p>
+    <p>Invoice Date: {{invoice.invoiceDate}}</p>
+    <p>Sailing Date: {{invoice.sailingDate}}</p>
+    <p>Vessel: {{invoice.vessel}}</p>
+    <p>Voyage: {{invoice.voyage}}</p>
+    <p>Port of Loading: {{invoice.portOfLoading}}</p>
+    <p>Port of Discharge: {{invoice.portOfDischarge}}</p>
+</div>
+<p>This is an auto-generated invoice. No signature or stamp required.</p>
+</body>
+</html>
